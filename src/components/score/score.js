@@ -3,15 +3,15 @@ import "./score.sass"
 import Service from "../../services/services";
 
 class Score extends Component {
-  data = new Service();
+  getDataService = new Service();
 
   state = {
-    arr: []
+    scoreData: []
   }
 
   getInfo = () => {
-    this.data.getScore().then(items => {
-      this.setState({arr: items});
+    this.getDataService.getScore().then(items => {
+      this.setState({scoreData: items});
     });
   }
 
@@ -22,9 +22,9 @@ class Score extends Component {
   render() {
     return(
       <div className="score">
-        <span>{this.state.arr[0]}</span>
+        <span>{this.state.scoreData[0]}</span>
         <span>:</span>
-        <span>{this.state.arr[1]}</span>
+        <span>{this.state.scoreData[1]}</span>
       </div>
     );
   }

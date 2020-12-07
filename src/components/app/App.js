@@ -5,7 +5,7 @@ import Score from "../score/score";
 import Service from "../../services/services";
 
 class App extends Component {
-  data = new Service();
+  getDataService = new Service();
 
   state = {
     arr: [],
@@ -13,13 +13,13 @@ class App extends Component {
   };
 
   getInfoFirst = () => {
-    this.data.getFirst().then(items => {
+    this.getDataService.getFirst().then(items => {
       this.setState({arr: items});
     });
   }
 
   getInfoSecond = () => {
-    this.data.getSecond().then(items => {
+    this.getDataService.getSecond().then(items => {
       this.setState({arrSecond: items});
     });
   }
